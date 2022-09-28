@@ -1,33 +1,11 @@
 <html lang="en"><head>
 
   <meta charset="UTF-8">
-  
-<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-<meta name="apple-mobile-web-app-title" content="CodePen">
-
-<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-
-<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-
-
-  <title>CodePen - App redirect</title>
-  
-  
-  
+ 
   
 
-  <script>
-  window.console = window.console || function(t) {};
-</script>
-
   
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-
+ 
 
 </head>
 
@@ -50,22 +28,9 @@
 
 (function () {
 
-  var queryString = {},
   browserMovedToBackground = false;
 
-  // Parse the query string so we can take individual query string params
-  (function (search) {
-
-    search = (search || '').split(/[\&\?]/g);
-    for (var i = 0, count = search.length; i < count; i++) {if (window.CP.shouldStopExecution(0)) break;
-      if (!search[i]) continue;
-      var pair = search[i].split('=');
-      queryString[pair[0]] = queryString[pair[0]] !== undefined ?
-      [pair[1] || ''].concat(queryString[pair[0]]) :
-      pair[1] || '';
-    }window.CP.exitedLoop(0);
-
-  })(window.location.search);
+ 
 
   // Listen to visibility change to prevent next url
   window.document.addEventListener("visibilitychange", function (e) {
@@ -80,8 +45,6 @@
      * @expose 
      * @public
      * */
-    queryString: queryString,
-
     redirect: function (options) {
 
       var hasIos = !!(options.iosApp || options.iosAppStore);
@@ -183,7 +146,7 @@
 })();
 
 window.onerror = function () {
-  console.error("DUD");
+  console.error("DUY");
 };
 
 // You have the whole queryString ready for you here in a key->value form.
