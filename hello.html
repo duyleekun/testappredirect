@@ -149,27 +149,22 @@ window.onerror = function () {
   console.error("DUY");
 };
 
-// You have the whole queryString ready for you here in a key->value form.
-// In the edge case where there are multiple values, the value is an array.
-var qs = AppRedirect.queryString;
-
 // Here we initiate the redirect process
 AppRedirect.redirect({
 
-  iosApp: 'twitter://post?message=' + qs['message'],
+  iosApp: 'twitter://post?message=duy',
 
-  iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
+  iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=duy',
 
   // For this, your app need to have category filter: android.intent.category.BROWSABLE
   android: {
-    'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
+    'host': 'post/?message=' + encodeURIComponent('duy'), // Host/path/querystring part in a custom scheme URL
     // 'action': '', // Equivalent to ACTION in INTENTs
     // 'category': '', // Equivalent to CATEGORY in INTENTs
     // 'component': '', // Equivalent to COMPONENT in INTENTs
     'scheme': 'twitter', // Scheme part in a custom scheme URL
     'package': 'com.twitter.android', // Package name in Play store
-    'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message'] } });
-//# sourceURL=pen.js
+    'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=duy' } });
     </script>
 
   
