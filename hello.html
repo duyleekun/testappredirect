@@ -152,19 +152,19 @@ window.onerror = function () {
 // Here we initiate the redirect process
 AppRedirect.redirect({
 
-  iosApp: 'twitter://post?message=duy',
+  iosApp: 'dplot://home',
 
-  iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=duy',
+  iosAppStore: 'https://apps.apple.com/app/%EB%94%94%ED%94%8C%EB%A1%AF/id1624417666',
 
   // For this, your app need to have category filter: android.intent.category.BROWSABLE
   android: {
-    'host': 'post/?message=' + encodeURIComponent('duy'), // Host/path/querystring part in a custom scheme URL
+    'host': 'home', // Host/path/querystring part in a custom scheme URL
     // 'action': '', // Equivalent to ACTION in INTENTs
     // 'category': '', // Equivalent to CATEGORY in INTENTs
     // 'component': '', // Equivalent to COMPONENT in INTENTs
-    'scheme': 'twitter', // Scheme part in a custom scheme URL
-    'package': 'com.twitter.android', // Package name in Play store
-    'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=duy' } });
+    'scheme': 'dplot', // Scheme part in a custom scheme URL
+    'package': 'kr.co.dplot', // Package name in Play store
+    'fallback': 'https://play.google.com/store/apps/details?id=kr.co.dplot' } });
     </script>
 
   
